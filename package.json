@@ -4,10 +4,10 @@
   "description": "Sistema web para gestão de abrigo de animais e apoio ao processo de adoção",
   "main": "index.js",
   "scripts": {
-  "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-  "build": "tsc",
-  "start": "node dist/server.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only backend/src/server.ts",
+    "build": "tsc",
+    "start": "node dist/backend/src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -16,20 +16,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/fifieggert/anjos_protetores/issues"
   },
   "homepage": "https://github.com/fifieggert/anjos_protetores#readme",
   "dependencies": {
-    "@prisma/client": "^7.5.0",
+    "@prisma/client": "^6.19.3",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
     "morgan": "^1.10.1",
-    "prisma": "^7.5.0",
+    "prisma": "^6.19.3",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
