@@ -4,7 +4,9 @@ import { Prisma } from "@prisma/client";
 const usuarioSelect = {
     id: true,
     nome: true,
+    cpf: true,
     email: true,
+    senhaHash: true,
     perfil: true,
     ativo: true,
     criadoEm: true,
