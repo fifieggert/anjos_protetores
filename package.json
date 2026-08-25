@@ -29,6 +29,7 @@
     "jsonwebtoken": "^9.0.3",
     "morgan": "^1.10.1",
     "prisma": "^6.19.3",
+    "styled-components": "^6.5.3",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {

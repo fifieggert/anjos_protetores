@@ -46,7 +46,7 @@ export class termoAdocaoController {
     async delete(req: Request, res: Response) {
         try {
             await repository.delete(req.params.id as string);
-            return res.status(200).send({"message": "Termo de adoção deletado com sucesso"});
+            return res.status(204).send();
         } catch (error) {
             return res.status(500).json({ error: "Erro ao excluir termo de adoção." });
         }
