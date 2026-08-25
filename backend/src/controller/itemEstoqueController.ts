@@ -46,7 +46,7 @@ export class itemEstoqueController {
     async delete(req: Request, res: Response) {
         try {
             await repository.delete(req.params.id as string);
-            return res.status(204).send();
+            return res.status(200).send({"message": "Item de estoque deletado com sucesso"});
         } catch (error) {
             return res.status(500).json({ error: "Erro ao excluir item de estoque." });
         }

@@ -9,6 +9,7 @@ export class saidaEstoqueController {
             const saida = await repository.create(req.body);
             return res.status(201).json(saida);
         } catch (error) {
+            console.error(error);
             return res.status(500).json({ error: "Erro ao criar saída de estoque." });
         }
     }
@@ -46,7 +47,7 @@ export class saidaEstoqueController {
     async delete(req: Request, res: Response) {
         try {
             await repository.delete(req.params.id as string);
-            return res.status(204).send();
+            return res.status(200).send({"message": "Saída de estoque deletada com sucesso"});
         } catch (error) {
             return res.status(500).json({ error: "Erro ao excluir saída de estoque." });
         }

@@ -13,7 +13,7 @@ const saidaEstoqueSelect = {
 } satisfies Prisma.SaidaEstoqueSelect;
 
 export class saidaEstoqueRepository {
-    create(data: Prisma.SaidaEstoqueCreateInput) {
+    create(data: Prisma.SaidaEstoqueUncheckedCreateInput) {
         return prisma.saidaEstoque.create({
             data,
             select: saidaEstoqueSelect,
@@ -34,7 +34,7 @@ export class saidaEstoqueRepository {
         });
     }
 
-    update(id: string, data: Prisma.SaidaEstoqueUpdateInput) {
+    update(id: string, data: Prisma.SaidaEstoqueUncheckedUpdateInput) {
         return prisma.saidaEstoque.update({
             where: { id },
             data,

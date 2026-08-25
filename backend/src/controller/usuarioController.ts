@@ -34,6 +34,18 @@ export class usuarioController {
         }
     }
 
+    async findByEmail(req: Request, res: Response) {
+        try {
+            const usuario = await repository.findByEmail(req.params.email as string);
+            if (!usuario) {
+                return res.status(404).json({ error: "Usuário não encontrado." });
+            }
+            return res.status(200).json(usuario);
+        } catch (error) {
+            return res.status(500).json({ error: "Erro ao buscar usuário." });
+        }
+    }
+
     async update(req: Request, res: Response) {
         try {
             const usuario = await repository.update(req.params.id as string, req.body);
@@ -46,7 +58,7 @@ export class usuarioController {
     async delete(req: Request, res: Response) {
         try {
             await repository.delete(req.params.id as string);
-            return res.status(204).send();
+            return res.status(200).send({"message": "Usuário deletado com sucesso"});
         } catch (error) {
             return res.status(500).json({ error: "Erro ao excluir usuário." });
         }
